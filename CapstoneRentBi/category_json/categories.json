@@ -1,0 +1,84 @@
+{
+  "countries": [
+    {
+      "countryname": "Turkey",
+      "city": [
+        {
+          "cityname": "Istanbul",
+          "district": [
+            "Pendik",
+            "Kartal",
+            "Kadıköy",
+            "Tuzla",
+            "Eminönü",
+            "Fatih",
+            "Beşiktaş",
+            "Maltepe",
+            "Bağcılar"
+          ]
+        },
+        {
+          "cityname": "Ankara",
+          "district": [
+            "Kızılay",
+            "Ulus",
+            "Esat"
+          ]
+        }
+      ]
+    },
+    {
+      "countryname": "USA",
+      "city": [
+        {
+          "cityname": "New York",
+          "district": [
+            "Manhanttan",
+            "Bronx",
+            "Queens"
+          ]
+        },
+        {
+          "cityname": "California",
+          "district": [
+            "Los Angeles",
+            "San Diego",
+            "San Jose"
+          ]
+        }
+      ]
+    },
+    {
+      "countryname": "China",
+      "city": [
+        {
+          "cityname": "Beijing",
+          "district": [
+            "Haidian",
+            "Tongzhou",
+            "Changping",
+            "Daxing"
+          ]
+        },
+        {
+          "cityname": "Shanghai",
+          "district": [
+            "Pudong",
+            "Chongming",
+            "Songjiang",
+            "Fengxian",
+            "Qingpu"
+          ]
+        },
+        {
+          "cityname": "Hong Kong",
+          "district": [
+            "Tai Po",
+            "Island",
+            "Tsuen Wan"
+          ]
+        }
+      ]
+    }
+  ]
+}
