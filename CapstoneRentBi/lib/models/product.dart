@@ -57,15 +57,17 @@ class ProductModel {
     required this.title,
     required this.price,
     required this.seller,
-             this.buyer,
+    this.description,
+    this.buyer,
     required this.image,
-             this.view,
+    this.view,
   });
 
   String id;
   String title;
   String price;
   String seller;
+  String? description;
   String? buyer;
   String image;
   int? view;
@@ -75,7 +77,7 @@ class ProductModel {
     String? title,
     String? price,
     String? seller,
-    String?  buyer,
+    String? buyer,
     String? image,
     int? view,
   }) =>
@@ -86,7 +88,8 @@ class ProductModel {
         seller: seller ?? this.seller,
         buyer: buyer ?? this.buyer,
         image: image ?? this.image,
-        view:  view ?? this.view
+        view: view ?? this.view,
+        description: description ?? description,
       );
 
   factory ProductModel.fromRawJson(String str) => ProductModel.fromJson(json.decode(str));
@@ -94,39 +97,39 @@ class ProductModel {
   String toRawJson() => json.encode(toJson());
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
-    id: json["id"],
-    title: json["title"],
-    price: json["price"],
-    seller: json["seller"],
-    buyer: json["buyer"] ?? 'null',
-    image: json["image"],
-    view: json["view"] ?? 0,
-  );
+      id: json["id"],
+      title: json["title"],
+      price: json["price"],
+      seller: json["seller"],
+      buyer: json["buyer"] ?? 'null',
+      image: json["image"],
+      view: json["view"] ?? 0,
+      description: json["description"] ?? 'unknown');
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    "id":     id,
-    "title":  title,
-    "price":  price,
-    "seller": seller,
-    "buyer":  buyer ?? 'null',
-    "image":  image,
-    "view": view,
-  };
+        "id": id,
+        "title": title,
+        "price": price,
+        "seller": seller,
+        "buyer": buyer ?? 'null',
+        "image": image,
+        "view": view,
+        "description": description ?? 'unknown',
+      };
 }
 
-var map={
-  "title":"bershka",
-  "image":"url",
-  "price":"149.99",
-  "categories":[{
-    "category":"sweat",
-    "subcategory":"hoodies"
-  }]
+var map = {
+  "title": "bershka",
+  "image": "url",
+  "price": "149.99",
+  "categories": [
+    {"category": "sweat", "subcategory": "hoodies"}
+  ]
 };
 
 Map _categoriesMap = {
   "Car": {
-    "Brand":{
+    "Brand": {
       "Audi": {
         "model": [
           'series 1',
@@ -563,22 +566,22 @@ Map _categoriesMap = {
   },
   "Electronics": {
     "Subcategory": {
-      "Cameras":{},
-      "Computers":{},
-      "Other":{},
-      "Phones":{},
-      "Speakers & Headphones":{},
-      "Tvs":{},
+      "Cameras": {},
+      "Computers": {},
+      "Other": {},
+      "Phones": {},
+      "Speakers & Headphones": {},
+      "Tvs": {},
     }
   },
   "Home and Appliances": {
-    "Beeding & Rugs":{},
-    "Cookware & Tableware":{},
-    "Décor":{},
-    "Furniture":{},
-    "Home Applines":{},
-    "Home Improvement":{},
-    "Others":{},
+    "Beeding & Rugs": {},
+    "Cookware & Tableware": {},
+    "Décor": {},
+    "Furniture": {},
+    "Home Applines": {},
+    "Home Improvement": {},
+    "Others": {},
   },
   "Gaming": {},
   "Sports and Outdoors": {},

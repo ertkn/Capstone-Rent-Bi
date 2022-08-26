@@ -173,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
           String imageURL = await ProductService().getMediaURL(imageFile);
           // ProductService().addProduct();
         }*/
-        await Navigator.pushReplacementNamed(context, '/productadd');
+        await Navigator.pushNamed(context, '/productadd');
         },
       child: const Icon(
         Icons.camera_alt,

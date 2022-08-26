@@ -191,18 +191,21 @@ class ProductService {
 
   Future<ProductModel> addProductInScreen(ProductModel productModel, XFile pickedFile) async {
     var ref = _firestore.collection(_productCollectionPath);
+    var user = AuthService().isUserNull();
 
     productModel.image = await _storageService.uploadMedia(File(pickedFile.path));
 
     // _mediaUrl = getMediaURL(pickedFile.path);
 
     var documentRef = await ref.add({
-      'id': productModel.id,
-      'id': productModel.image,
-      'id': productModel.price,
-      'id': productModel.title,
-      'id': productModel.seller,
-      'id': productModel.buyer,
+      'id': user?.uid,
+      'image': productModel.image,
+      'price': productModel.price,
+      'title': productModel.title,
+      'seller': user?.uid,
+      'buyer': productModel.buyer,
+      'view': 0,
+      'description': productModel.description,
     });
 
     return productModel;
